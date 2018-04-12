@@ -4,7 +4,7 @@ import {readdirSync, lstatSync, existsSync} from 'fs';
 import {SfdxCommand, core} from '@salesforce/command';
 
 core.Messages.importMessagesDirectory(join(__dirname, '..', '..'));
-const messages = core.Messages.loadMessages('dsy-sfdx-plugins', 'find-and-compile');
+const messages = core.Messages.loadMessages('@desynit/dsy-sfdx-plugins', 'find-and-compile');
 
 export class FindAndCompile extends SfdxCommand {
     public static examples = [

@@ -5,7 +5,7 @@ import { FindAndCompile } from '../../../lib/find-compile';
 import sass = require('sass'); // Import sass the old fashioned way
 
 core.Messages.importMessagesDirectory(join(__dirname, '..', '..', '..'));
-const messages = core.Messages.loadMessages('dsy-sfdx-plugins', 'sass-compile');
+const messages = core.Messages.loadMessages('@desynit/dsy-sfdx-plugins', 'sass-compile');
 
 export default class LessCompile extends FindAndCompile {
 

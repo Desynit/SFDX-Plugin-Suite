@@ -5,7 +5,7 @@ import { FindAndCompile } from '../../../lib/find-compile';
 import less = require('less'); // Import less the old fashioned way
 
 core.Messages.importMessagesDirectory(join(__dirname, '..', '..', '..'));
-const messages = core.Messages.loadMessages('dsy-sfdx-plugins', 'less-compile');
+const messages = core.Messages.loadMessages('@desynit/dsy-sfdx-plugins', 'less-compile');
 
 export default class LessCompile extends FindAndCompile {
 
