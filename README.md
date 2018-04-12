@@ -1,48 +1,39 @@
-dsy-sfdx-cli-plugins
-===
+# SFDX Plugin Suite
 
-A suite of useful plugins for the SFDX CLI created and maintained by Desynit Limited
+A (hopefully) growing suite of (hopefully) useful plugins for the SFDX CLI created and maintained by Desynit Limited
 
-[![Version](https://img.shields.io/npm/v/dsy-sfdx-cli-plugins.svg)](https://npmjs.org/package/dsy-sfdx-cli-plugins)
-[![CircleCI](https://circleci.com/gh/squibobblepants/dsy-sfdx-cli-plugins-sfdx-plugins/tree/master.svg?style=shield)](https://circleci.com/gh/squibobblepants/dsy-sfdx-cli-plugins-sfdx-plugins/tree/master)
-[![Appveyor CI](https://ci.appveyor.com/api/projects/status/github/squibobblepants/dsy-sfdx-cli-plugins-sfdx-plugins?branch=master&svg=true)](https://ci.appveyor.com/project/heroku/dsy-sfdx-cli-plugins-sfdx-plugins/branch/master)
-[![Codecov](https://codecov.io/gh/squibobblepants/dsy-sfdx-cli-plugins-sfdx-plugins/branch/master/graph/badge.svg)](https://codecov.io/gh/squibobblepants/dsy-sfdx-cli-plugins-sfdx-plugins)
-[![Greenkeeper](https://badges.greenkeeper.io/squibobblepants/dsy-sfdx-cli-plugins-sfdx-plugins.svg)](https://greenkeeper.io/)
-[![Known Vulnerabilities](https://snyk.io/test/github/squibobblepants/dsy-sfdx-cli-plugins-sfdx-plugins/badge.svg)](https://snyk.io/test/github/squibobblepants/dsy-sfdx-cli-plugins-sfdx-plugins)
-[![Downloads/week](https://img.shields.io/npm/dw/dsy-sfdx-cli-plugins.svg)](https://npmjs.org/package/dsy-sfdx-cli-plugins)
-[![License](https://img.shields.io/npm/l/dsy-sfdx-cli-plugins.svg)](https://github.com/squibobblepants/dsy-sfdx-cli-plugins-sfdx-plugins/blob/master/package.json)
+## Setup
 
-<!-- toc -->
-* [Debugging your plugin](#debugging-your-plugin)
-<!-- tocstop -->
-<!-- install -->
-<!-- usage -->
-```sh-session
-$ npm install -g dsy-sfdx-cli-plugins
-$ dsy-sfdx-cli-plugins COMMAND
-running command...
-$ dsy-sfdx-cli-plugins (-v|--version|version)
-dsy-sfdx-cli-plugins/0.0.0 win32-x64 node-v8.11.1
-$ dsy-sfdx-cli-plugins --help [COMMAND]
-USAGE
-  $ dsy-sfdx-cli-plugins COMMAND
-...
-```
-<!-- usagestop -->
-<!-- commands -->
-* [dsy-sfdx-cli-plugins hello:org [FILE]](#dsy-sfdx-cli-plugins-helloorg-file)
+### Install from source
 
-## dsy-sfdx-cli-plugins hello:org [FILE]
+1. Install the SDFX CLI.
+1. Clone the repository: `git clone git@github.com:Desynit/SFDX-Plugin-Suite.git`
+1. Go into the repository: `cd SFDX-Plugin-Suite`
+1. Install npm modules: `npm install`
+1. Link the plugin: `sfdx plugins:link .`
 
-Prints a greeting and your org id(s)!
+### Install as plugin
+
+1. Install plugin: `sfdx plugins:install dsy-sfdx-plugins`
+
+
+## Compile LESS - sfdx dsy:less:compile
+
+Finds and compiles LESS files into CSS. 
+
+Each LESS file that is found is compiled to CSS and then saved in the same location as the .less file, but with a .css
+extension. 
+
+Warning - *DO NOT* use `--recursive` and set the `--path` to something silly like `/` because there's nothing stopping this
+plugin from finding and compiling every single LESS file on your hard drive...
 
 ```
 USAGE
-  $ dsy-sfdx-cli-plugins hello:org [FILE]
+  $ sfdx dsy:less:compile
 
 OPTIONS
-  -f, --force
-  -n, --name=name                                  name to print
+  -r, --recursive                                  recursively through folders looking for LESS files 
+  -p, --path=/path/to/source/folder                path to start looking for LESS files from
   -u, --targetusername=targetusername              username or alias for the target org; overrides default target org
   -v, --targetdevhubusername=targetdevhubusername  username or alias for the dev hub org; overrides default dev hub org
   --apiversion=apiversion                          override the api version used for api requests made by this command
@@ -50,32 +41,57 @@ OPTIONS
   --loglevel=(trace|debug|info|warn|error|fatal)   logging level for this command invocation
 
 EXAMPLES
-  $ sfdx hello:org --targetusername myOrg@example.com --targetdevhubusername devhub@org.com
-     Hello world! This is org: MyOrg and I will be around until Tue Mar 20 2018!
-     My hub org id is: 00Dxx000000001234
-  
-
-  $ sfdx hello:org --name myname --targetusername myOrg@example.com
-     Hello myname! This is org: MyOrg and I will be around until Tue Mar 20 2018!
+  $ sfdx dsy:less:compile --path ./force-app/main/default/aura/ --recursive
 ```
 
-_See code: [src/commands/hello/org.ts](https://github.com/squibobblepants/dsy-sfdx-cli-plugins-sfdx-plugins/blob/v0.0.0/src/commands/hello/org.ts)_
+_See code: [src/commands/dsy/less/compile.ts](https://github.com/Desynit/SFDX-Plugin-Suite/blob/v0.0.0/src/commands/dsy/less/compile.ts)_
+
+## Compile SASS - sfdx dsy:sass:compile
+
+Finds and compiles SASS and SCSS files into CSS
+
+Each SASS/SCSS file that is found is compiled to CSS and then saved in the same location as the .sass/.scss file, but with a .css
+extension. 
+
+Warning - *DO NOT* use `--recursive` and set the `--path` to something silly like `/` because there's nothing stopping this
+plugin from finding and compiling every single SASS/SCSS file on your hard drive...
+
+```
+USAGE
+  $ sfdx dsy:sass:compile
+
+OPTIONS
+  -r, --recursive                                  recursively through folders looking for SASS/SCSS files 
+  -p, --path=/path/to/source/folder                path to start looking for SASS/SCSS files from
+  -u, --targetusername=targetusername              username or alias for the target org; overrides default target org
+  -v, --targetdevhubusername=targetdevhubusername  username or alias for the dev hub org; overrides default dev hub org
+  --apiversion=apiversion                          override the api version used for api requests made by this command
+  --json                                           format output as json
+  --loglevel=(trace|debug|info|warn|error|fatal)   logging level for this command invocation
+
+EXAMPLES
+  $ sfdx dsy:sass:compile --path ./force-app/main/default/aura/ --recursive
+```
+
+_See code: [src/commands/dsy/less/compile.ts](https://github.com/Desynit/SFDX-Plugin-Suite/blob/v0.0.0/src/commands/dsy/less/compile.ts)_
+
+
 <!-- commandsstop -->
 <!-- debugging-your-plugin -->
-# Debugging your plugin
+## Debugging
 We recommend using the Visual Studio Code (VS Code) IDE for your plugin development. Included in the `.vscode` directory of this plugin is a `launch.json` config file, which allows you to attach a debugger to the node process when running your commands.
 
-To debug the `hello:org` command: 
+To debug the `dsy:less:compile` command: 
 1. Start the inspector
   
 If you linked your plugin to the sfdx cli, call your command with the `dev-suspend` switch: 
 ```sh-session
-$ sfdx hello:org -u myOrg@example.com --dev-suspend
+$ sfdx dsy:less:compile --recursive --dev-suspend
 ```
   
 Alternatively, to call your command using the `bin/run` script, set the `NODE_OPTIONS` environment variable to `--inspect-brk` when starting the debugger:
 ```sh-session
-$ NODE_OPTIONS=--inspect-brk bin/run hello:org -u myOrg@example.com
+$ NODE_OPTIONS=--inspect-brk bin/run dsy:less:compile --recursive --path /path/to/your/target
 ```
 
 2. Set some breakpoints in your command code

@@ -4,7 +4,7 @@ import {readdirSync, lstatSync, existsSync} from 'fs';
 import {SfdxCommand, core} from '@salesforce/command';
 
 core.Messages.importMessagesDirectory(join(__dirname, '..', '..'));
-const messages = core.Messages.loadMessages('dsy-sfdx-cli-plugins', 'find-and-compile');
+const messages = core.Messages.loadMessages('dsy-sfdx-plugins', 'find-and-compile');
 
 export class FindAndCompile extends SfdxCommand {
     // This needs to be overridden / set
@@ -29,9 +29,9 @@ export class FindAndCompile extends SfdxCommand {
     // Comment this out if your command does not support a hub org username
     // protected static supportsDevhubUsername = true;
   
-    // Set this to true if your command requires a project workspace; 'requiresProject' is false by default
-//   protected static requiresProject = true;
-    protected static requiresProject = false; // TODO: Change this back to true later
+    // I think it's a good idea to restrict this command to being run in an SFDX project folder, 
+    // though perhaps we could allow this decision to be overridden with a flag.
+    protected static requiresProject = true;
 
     protected findFilesByExtension = (startFolder:string, recursive:boolean, callback:Function) => {
         let files = readdirSync(startFolder);
@@ -72,7 +72,7 @@ export class FindAndCompile extends SfdxCommand {
     
         // Set our RegExp just once
         this.extensionPattern = new RegExp("\\.(" + this.extensions.join("|") + ")$");
-        
+
         // Find some files and compile them
         this.findFilesByExtension(path, this.flags.recursive, this.compileFile);
 

@@ -1,9 +1,9 @@
 {
-  "name": "dsy-sfdx-cli-plugins",
+  "name": "dsy-sfdx-plugins",
   "description": "A suite of useful plugins for the SFDX CLI created and maintained by Desynit Limited",
   "version": "0.0.0",
   "author": "Tom Blockley",
-  "bugs": "https://github.com/squibobblepants/dsy-sfdx-cli-plugins-sfdx-plugins/issues",
+  "bugs": "https://github.com/Desynit/SFDX-Plugin-Suite/issues",
   "dependencies": {
     "@oclif/command": "^1.4.13",
     "@oclif/config": "^1.6.3",
@@ -39,9 +39,11 @@
     "/lib",
     "/messages"
   ],
-  "homepage": "https://github.com/squibobblepants/dsy-sfdx-cli-plugins-sfdx-plugins",
+  "homepage": "https://github.com/Desynit/SFDX-Plugin-Suite",
   "keywords": [
-    "sfdx-plugin"
+    "sfdx-plugin",
+    "sfdx",
+    "sfdx-cli"
   ],
   "license": "MIT",
   "oclif": {
@@ -61,7 +63,7 @@
       "@oclif/plugin-help"
     ]
   },
-  "repository": "squibobblepants/dsy-sfdx-cli-plugins-sfdx-plugins",
+  "repository": "Desynit/SFDX-Plugin-Suite",
   "scripts": {
     "build": "rm -rf lib && tsc",
     "clean": "rm -f .oclif.manifest.json",
