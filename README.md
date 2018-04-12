@@ -14,7 +14,7 @@ A (hopefully) growing suite of (hopefully) useful plugins for the SFDX CLI creat
 
 ### Install as plugin
 
-1. Install plugin: `sfdx plugins:install dsy-sfdx-plugins`
+1. Install plugin: `sfdx plugins:install @desynit/dsy-sfdx-plugins`
 
 
 ## Compile LESS - sfdx dsy:less:compile
@@ -101,3 +101,6 @@ $ NODE_OPTIONS=--inspect-brk bin/run dsy:less:compile --recursive --path /path/t
 6. Hit the green play button at the top middle of VS Code (this play button will be to the right of the play button that you clicked in step #5).
 <br><img src=".images/vscodeScreenshot.png" width="480" height="278"><br>
 Congrats, you are debugging!
+
+## Publishing
+Remember to call publish like so: `npm publish --access public` otherwise it will try to be private
