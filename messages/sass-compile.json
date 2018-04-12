@@ -1,0 +1,3 @@
+{
+    "commandDescription": "Compiles all SASS/SCSS files in the specified directory, or all, recursively"
+}

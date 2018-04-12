@@ -1,0 +1,3 @@
+{
+    "commandDescription": "Compiles all LESS files in the specified directory, or all, recursively"
+}
