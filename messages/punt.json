@@ -1,0 +1,3 @@
+{
+  "commandDescription": "Chains sfdx force:source:push with sfdx force:apex:test"
+}

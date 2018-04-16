@@ -12,7 +12,8 @@
     "@types/less": "0.0.32",
     "graceful-fs": "^4.1.11",
     "less": "^3.0.1",
-    "sass": "^1.1.1"
+    "sass": "^1.1.1",
+    "salesforce-alm": "^40.0.0"
   },
   "devDependencies": {
     "@oclif/dev-cli": "^1.13.0",
