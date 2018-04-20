@@ -1,0 +1,3 @@
+{
+  "commandDescription": "Clears sfdx's source caching so that you can force everything to be re-pushed to your scratch org"
+}
