@@ -16,6 +16,17 @@ A (hopefully) growing suite of (hopefully) useful plugins for the SFDX CLI creat
 
 1. Install plugin: `sfdx plugins:install @desynit/dsy-sfdx-plugins`
 
+### Pre-requisites for SFDX projects
+
+To use the less/sass compilation tools, you should ensure that sfdx does not try to push them to scratch orgs. Ensure 
+that you have a `.forceignore` file in the root of your sfdx projects that contains the following (at least)
+
+```
+# Never push .less / .sass / .scss files
+*.less
+*.sass
+*.scss
+```
 
 ## Compile LESS - sfdx dsy:less:compile
 
@@ -74,7 +85,6 @@ EXAMPLES
 ```
 
 _See code: [src/commands/dsy/less/compile.ts](https://github.com/Desynit/SFDX-Plugin-Suite/blob/v0.0.0/src/commands/dsy/less/compile.ts)_
-
 
 <!-- commandsstop -->
 <!-- debugging-your-plugin -->

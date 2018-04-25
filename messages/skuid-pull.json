@@ -1,0 +1,3 @@
+{
+  "commandDescription": "Reads skuid-files.json from the project directory pulls down changes to the static resources listed there so you can keep your skuid pages in sfdx and source control"
+}
