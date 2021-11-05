@@ -1,7 +1,7 @@
 {
   "name": "@desynit/dsy-sfdx-plugins",
   "description": "A suite of useful plugins for the SFDX CLI created and maintained by Desynit Limited",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Tom Blockley",
   "bugs": "https://github.com/Desynit/SFDX-Plugin-Suite/issues",
   "dependencies": {

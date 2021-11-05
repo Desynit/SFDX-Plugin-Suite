@@ -36,7 +36,7 @@ export default class EnableAdvancedMulticurrencySupport extends SfdxCommand {
 
     private async enableAdvancedMultiCurrency() {
         const instanceUrl = this.org.getConnection().instanceUrl;
-        const ADVANCED_MULTICURRENCY_PAGE = "_ui/system/organization/AdvancedCurrencyEnable?isdtp=p1";
+        const ADVANCED_MULTICURRENCY_PAGE = "/_ui/system/organization/AdvancedCurrencyEnable?isdtp=p1";
         // Fire up a headless browser
         const browser = await puppeteer.launch({
             args: ["--no-sandbox", "--disable-setuid-sandbox"],

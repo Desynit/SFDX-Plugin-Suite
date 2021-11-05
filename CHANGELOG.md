@@ -1,3 +1,6 @@
+### 0.1.1 - November 2021
+Missed a forward slash there
+
 ### 0.1.0 - November 2021
 Add Advanced Multicurrency Toggle command
 
