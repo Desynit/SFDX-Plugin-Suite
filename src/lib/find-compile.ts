@@ -1,21 +1,23 @@
-import {flags} from '@oclif/command';
+import {flags} from '@salesforce/command';
 import {join} from 'path';
 import {readdirSync, lstatSync, existsSync} from 'fs';
-import {SfdxCommand, core} from '@salesforce/command';
+import {SfdxCommand, core, FlagsConfig} from '@salesforce/command';
 
 core.Messages.importMessagesDirectory(join(__dirname, '..', '..'));
 const messages = core.Messages.loadMessages('@desynit/dsy-sfdx-plugins', 'find-and-compile');
 
 export class FindAndCompile extends SfdxCommand {
+    public static description = "Base class for finding and compiling sets of files - extend this; do not use directly";
     public static examples = [
         '$ sfdx dsy:sass:compile --path ./force-app/main/default/aura/ --recursive'
     ];
     public static args = []; // No default args (I think)
 
-    protected static flagsConfig = {
+    protected static flagsConfig:FlagsConfig = {
         // flag with a value (-n, --name=VALUE)
         path: flags.string({char: 'p', description: messages.getMessage('pathFlagDescription')}),
-        recursive: flags.boolean({char: 'r', description: messages.getMessage('recursiveFlagDescription')})
+        recursive: flags.boolean({char: 'r', description: messages.getMessage('recursiveFlagDescription')}),
+        verbose: flags.builtin()
     };
 
     // Comment this out if your command does not require an org username

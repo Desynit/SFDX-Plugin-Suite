@@ -17,6 +17,27 @@ A (hopefully) growing suite of (hopefully) useful plugins for the SFDX CLI creat
 1. Install plugin: `sfdx plugins:install @desynit/dsy-sfdx-plugins`
 
 
+## Enable Advanced Multi-Currency Management - sfdx dsy:advanced-multicurrency:enable
+
+Enables Advanced Multi-Currency Management in the target Organisation.
+
+
+```
+USAGE
+  $ sfdx dsy:advanced-multicurrency:enable
+
+OPTIONS
+  -u, --targetusername=targetusername              username or alias for the target org; overrides default target org
+  -v, --targetdevhubusername=targetdevhubusername  username or alias for the dev hub org; overrides default dev hub org
+  --apiversion=apiversion                          override the api version used for api requests made by this command
+  --json                                           format output as json
+  --loglevel=(trace|debug|info|warn|error|fatal)   logging level for this command invocation
+
+EXAMPLES
+  $ sfdx dsy:advanced-multicurrency:enable
+```
+
+
 ## Compile LESS - sfdx dsy:less:compile
 
 Finds and compiles LESS files into CSS. 
