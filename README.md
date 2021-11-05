@@ -17,14 +17,14 @@ A (hopefully) growing suite of (hopefully) useful plugins for the SFDX CLI creat
 1. Install plugin: `sfdx plugins:install @desynit/dsy-sfdx-plugins`
 
 
-## Enable Advanced Multi-Currency Management - sfdx dsy:advanced-multicurrency:enable
+## Toggle Advanced Multi-Currency Management - sfdx dsy:advanced-multicurrency:toggle
 
-Enables Advanced Multi-Currency Management in the target Organisation.
+Toggles Advanced Multi-Currency Management in the target Organisation.
 
 
 ```
 USAGE
-  $ sfdx dsy:advanced-multicurrency:enable
+  $ sfdx dsy:advanced-multicurrency:toggle
 
 OPTIONS
   -u, --targetusername=targetusername              username or alias for the target org; overrides default target org
@@ -34,7 +34,7 @@ OPTIONS
   --loglevel=(trace|debug|info|warn|error|fatal)   logging level for this command invocation
 
 EXAMPLES
-  $ sfdx dsy:advanced-multicurrency:enable
+  $ sfdx dsy:advanced-multicurrency:toggle
 ```
 
 

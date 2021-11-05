@@ -63,7 +63,7 @@
         "description": "SASS/SCSS compiler helpers"
       },
       "dsy:advanced-multicurrency": {
-          "description": "Enable advanced multicurrency support for an org that already has MultiCurrency enabled"
+          "description": "Toggle advanced multicurrency support for an org that already has MultiCurrency enabled"
       }
     },
     "commands": "./lib/commands",
